@@ -53,6 +53,7 @@ git_clone_source_repo
 
 cd "$pkg_git_repo_dir" || exit
 git clone https://github.com/crowdsecurity/lua-cs-bouncer.git
+sed '/https://github.com/crowdsecurity/lua-cs-bouncer.git/d' Makefile
 cd /uny/sources || exit
 
 keep_git_dir=yes
