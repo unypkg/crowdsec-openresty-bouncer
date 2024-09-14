@@ -26,8 +26,13 @@ mkdir -pv "${DATA_PATH}/templates"
 mkdir -pv "${NGINX_CONF_DIR}"
 mkdir -pv "${LIB_PATH}"
 
+if [[ -s /bin/perl && ! -L /bin/perl ]]; then
+    mv -v /bin/perl /bin/perl_unybak
+    unyp si perl
+fi
+
 if ! "$OPENRESTY_PATH"bin/opm list | grep "pintsized/lua-resty-http" >/dev/null; then
-    opm get "${dep}" >/dev/null
+    "$OPENRESTY_PATH"bin/opm get "${dep}" >/dev/null
     echo "pintsized/lua-resty-http successfully installed in openresty"
 fi
 
