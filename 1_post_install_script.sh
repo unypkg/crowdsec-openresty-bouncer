@@ -20,6 +20,7 @@ SSL_CERTS_PATH="/etc/ssl/certs/ca-certificates.crt"
 LAPI_DEFAULT_PORT="8080"
 CSCLI_BIN=(/uny/pkg/crowdsec/*/bin/cscli)
 
+[[ ! -d /uny/pkg/openresty ]] && echo "You need to install OpenResty first of all. Aborting." && exit 1
 [[ -d ${CONFIG_DIR} ]] || mkdir -pv ${CONFIG_DIR}
 
 mkdir -pv "${DATA_PATH}/templates"
