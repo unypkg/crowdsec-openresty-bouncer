@@ -26,10 +26,10 @@ mkdir -pv "${DATA_PATH}/templates"
 mkdir -pv "${NGINX_CONF_DIR}"
 mkdir -pv "${LIB_PATH}"
 
-if [[ -s /bin/perl && ! -L /bin/perl ]]; then
-    mv -v /bin/perl /bin/perl_unybak
-    unyp si perl
-fi
+#if [[ -s /bin/perl && ! -L /bin/perl ]]; then
+#    mv -v /bin/perl /bin/perl_unybak
+#    unyp si perl
+#fi
 
 if ! "${OPENRESTY_PATH[0]}"bin/opm list | grep "pintsized/lua-resty-http" >/dev/null; then
     "${OPENRESTY_PATH[0]}"bin/opm get "${dep}" >/dev/null
