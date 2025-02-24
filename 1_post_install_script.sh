@@ -33,7 +33,7 @@ mkdir -pv "${LIB_PATH}"
 #fi
 
 if ! "${OPENRESTY_PATH[0]}"bin/opm list | grep "pintsized/lua-resty-http" >/dev/null; then
-    "${OPENRESTY_PATH[0]}"bin/opm get "${dep}" >/dev/null
+    "${OPENRESTY_PATH[0]}"bin/opm get "pintsized/lua-resty-http" >/dev/null
     echo "pintsized/lua-resty-http successfully installed in openresty"
 fi
 
