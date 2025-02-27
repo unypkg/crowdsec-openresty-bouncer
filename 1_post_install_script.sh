@@ -32,10 +32,10 @@ mkdir -pv "${LIB_PATH}"
 #    unyp si perl
 #fi
 
-if ! "${OPENRESTY_PATH[0]}"bin/opm list | grep "pintsized/lua-resty-http" >/dev/null; then
-    "${OPENRESTY_PATH[0]}"bin/opm get "pintsized/lua-resty-http" >/dev/null
-    echo "pintsized/lua-resty-http successfully installed in openresty"
-fi
+#if ! "${OPENRESTY_PATH[0]}"bin/opm list | grep "pintsized/lua-resty-http" >/dev/null; then
+#    "${OPENRESTY_PATH[0]}"bin/opm get "pintsized/lua-resty-http" >/dev/null
+#    echo "pintsized/lua-resty-http successfully installed in openresty"
+#fi
 
 #Don't overwrite the existing file
 if [ ! -s "${CONFIG_DIR}/crowdsec-openresty-bouncer.conf" ]; then
