@@ -44,7 +44,7 @@ if [ ! -s "${CONFIG_DIR}/crowdsec-openresty-bouncer.conf" ]; then
         SUFFIX=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 8)
         API_KEY=$("${CSCLI_BIN[0]}" bouncers add "crowdsec-openresty-bouncer-${SUFFIX}" -o raw)
         PORT=$("${CSCLI_BIN[0]}" config show --key "Config.API.Server.ListenURI" | cut -d ":" -f2)
-        if [ ! -z "$PORT" ]; then
+        if [ -n "$PORT" ]; then
             LAPI_DEFAULT_PORT=${PORT}
         fi
         CROWDSEC_LAPI_URL="http://127.0.0.1:${LAPI_DEFAULT_PORT}"
