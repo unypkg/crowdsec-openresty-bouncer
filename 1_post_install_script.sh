@@ -70,7 +70,7 @@ cp -r lua/lib/* "${LIB_PATH}"
 cp templates/* "${DATA_PATH}/templates/"
 #Patch the nginx config file
 SSL_CERTS_PATH=${SSL_CERTS_PATH} envsubst '$SSL_CERTS_PATH' <openresty/${NGINX_CONF} >"${NGINX_CONF_DIR}/${NGINX_CONF}"
-sed "s|/etc/crowdsec/bouncers|${CONFIG_PATH}|" -i "${NGINX_CONF_DIR}/${NGINX_CONF}"
+sed "s|/etc/crowdsec/bouncers|${CONFIG_DIR}|" -i "${NGINX_CONF_DIR}/${NGINX_CONF}"
 
 #############################################################################################
 ### End of script
