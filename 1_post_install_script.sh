@@ -48,6 +48,8 @@ if [ ! -s "${CONFIG_DIR}/crowdsec-openresty-bouncer.conf" ]; then
             LAPI_DEFAULT_PORT=${PORT}
         fi
         CROWDSEC_LAPI_URL="http://127.0.0.1:${LAPI_DEFAULT_PORT}"
+    else
+        echo "Crowdsec needs to be installed first. Aborting." && exit 1
     fi
     API_KEY=${API_KEY} CROWDSEC_LAPI_URL="${CROWDSEC_LAPI_URL}" envsubst '$API_KEY $CROWDSEC_LAPI_URL' <config/config_example.conf >"${CONFIG_DIR}/crowdsec-openresty-bouncer.conf"
     [ -n "${API_KEY}" ] && echo "New API key generated to be used in '${CONFIG_DIR}/crowdsec-openresty-bouncer.conf'"
